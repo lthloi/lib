@@ -1,0 +1,11 @@
+
+* Update all packages in package.json up to lastest version
+
+    - install globally "npm-check-updates"
+    $ npm i -g npm-check-updates
+
+    - run following scripts to update all packages up to lastest version
+    $ ncu -u
+    $ npm install
+
+Done!

@@ -1,0 +1,20 @@
+
+* get current time (second , minutes , hours , weekdays , day , month , year):
+
+__code{
+    let currentDate = new Date()
+}
+
+__options{
+    - day: currentDate.getDate()
+    - month: currentDate.getMonth() + 1 
+    # need to add +1 cuz getMonth() base on number 0 , it means number 0 means month 1...
+    # and number 11 means month 12
+    - year: currentDate.getFullYear() 
+    - hours: currentDate.getHours()
+    - minutes: currentDate.getMinutes()
+    - seconds: currentDate.getSeconds()
+    - weekdays:  currentDate.getDay() + 1
+    # like getMonth() , getDay return begin from number 0 , number 0 means Sunday...
+    # and number 3 means Wednesday
+}

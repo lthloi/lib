@@ -1,0 +1,11 @@
+
+* Check if a varible is iterable:
+    __js:{
+        if (Symbol.iterator in Object(value)) {
+            console.log('>>> iter')
+        } else {
+            console.log('>>> not')
+        }
+
+        # In that case, the value is a thing you want to check
+    }

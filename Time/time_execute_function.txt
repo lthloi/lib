@@ -1,0 +1,29 @@
+
+1. Using performance.now():
+    __js:{
+        let startTime = performance.now()
+        doSomething()   # measured code goes between startTime and endTime
+        let endTime = performance.now()
+        let time_execute = endTime - startTime
+        console.log('>>> time_execute execute in ms >>>', time_execute)
+    }
+
+2. Using console.time (living standard):
+    __js:{
+        console.time('>>> Time to do something is')
+        doSomething()   # The function you're measuring time for 
+        console.timeEnd('>>> Time to do something is')
+
+        **Note: The string being passed to the time() and timeEnd() methods must match
+    }
+
+3. Using Date().getTime():
+    __js:{
+        let startTime = new Date().getTime()
+        for (i = 0; i < 50000; ++i) {
+            # do something
+        }
+        let endTime = new Date().getTime()
+        let time_execute = endTime - startTime
+        console.log('>>> time_execute execute >>>', time_execute)
+    }

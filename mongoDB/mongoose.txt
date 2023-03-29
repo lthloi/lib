@@ -1,0 +1,42 @@
+
+1. Fix issue "user is not allowed to do action [insert] on [test.files]" and...
+1. "{"error":{"ok":0,"code":8000,"codeName":"AtlasError"}}"
+    __solve{
+        look 'Security' tab and pick 'Database Access' tab and at 'Database Users' tab...
+        . At database want to upload pick 'EDIT' button and at 'Database User Privileges'...
+        tab pick 'Built-in Role' pannel and select 'Read and write to any database' option...
+        and scroll down and pick 'Update User' button
+    }
+    __refference{
+        __images{
+            __cd{ ../Images/mongoose_upload_1.png }
+            __cd{ ../Images/mongoose_upload_2.png }
+        }
+    }
+
+2. Connect to a database on mongodb cluster:
+    __uri:{
+        'mongodb+srv://<username>:<password>@<cluster_name>.kqwqcb3.mongodb.net/<database_name>?retryWrites=true&w=majority'
+        VD:{
+            'mongodb+srv://codevcn:vcn095127@vcncluster.kqwqcb3.mongodb.net/VCN_Shop?retryWrites=true&w=majority'
+        }
+    }
+
+    __code:{
+        VD:{
+            import mongoose from "mongoose"
+
+            const { VCNSHOP_URI } = process.env
+
+            const connectDB = async () => {
+                try {
+                    await mongoose.connect(VCNSHOP_URI, { autoIndex: false })
+                    console.log('>>> connect DB successfully')
+                } catch (err) {
+                    console.log('>>> fail to connect DB >>>', err)
+                }
+            }
+
+            export default connectDB
+        }
+    }

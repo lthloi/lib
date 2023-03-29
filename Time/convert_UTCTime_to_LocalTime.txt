@@ -1,0 +1,45 @@
+
+1. convert UTC time (standardized ISO 8601-format) to local time without nice format:
+    __js:{
+        let date = new Date('<UTC Time>')
+        let convertedDate = date.toUTCString()
+        console.log('>>> Date >>>', convertedDate)
+    }
+
+    __VD:{
+        let date = new Date('2023-10-23T14:54:04.499Z')
+        let convertedDate = date.toUTCString()
+        console.log('>>> Date >>>', convertedDate)
+
+        __output:{
+            '>>> Date >>> Sun, 23 Oct 2022 14:54:04 GMT'
+        }
+    }
+
+2. convert UTC time (standardized ISO 8601-format) to local time with a nice format:
+    - Nice format 1 (self-made format):
+    __js:{
+        let date = new Date('<UTC Time>')
+        let convertedDate = date.getHours() + ':' + date.getMinutes() + ' ' + date.getDate() +...
+        '/' + date.getMonth() + '/' + date.getFullYear()
+        console.log('>>> Date >>>', convertedDate)
+    }
+
+    - Nice format 2:
+    __js:{
+        let date = new Date('<UTC Time>')
+        let convertedDate = date.toLocaleString()
+        console.log('>>> Date >>>', convertedDate)
+        # toLocaleString() will return a date with format: MM/DD/YYYY (tháng/ngày/năm)
+    }
+
+    __VD:{
+        let date = new Date('2022-10-23T14:54:04.499Z')
+        let convertedDate = date.toLocaleString()
+        console.log('>>> Date >>>', convertedDate)
+
+        __output:{
+            '>>> Date >>> 10/23/2022, 9:54:04 PM'
+            # MM/DD/YYYY
+        }
+    }

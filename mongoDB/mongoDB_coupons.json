@@ -1,0 +1,33 @@
+{
+    "_id": {
+        "$oid": "638a1fa93f071420ada342b4"
+    },
+    "type": "Free Shipping",
+    "cost": 2,
+    "img": "",
+    "apply_for": {
+        "all": true,
+        "list": []
+    },
+    "shop": {
+        "id": 0,
+        "name": "VCN Shop"
+    },
+    "name": "Coupon for new member",
+    "desc": "Every new member will get a free shipping coupon",
+    "createdOn": {
+        "$date": {
+            "$numberLong": "1669996969368"
+        }
+    },
+    "expireOn": {
+        "$date": {
+            "$numberLong": "1695315600000"
+        }
+    },
+    "code": {
+        "type": "VCNFAFS",
+        "id": "VCNFAFS031222S2"
+    },
+    "picked": false
+}

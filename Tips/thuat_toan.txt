@@ -1,0 +1,20 @@
+
+
+    async productsFilter() {
+        try {
+            let { category, price, rating } = this.query
+            if (!category && !price && !rating) return
+
+            this.data = this.data.filter((product) =>
+                (category ? product.category === category : true) &&
+                (price ? product.price.value >= (price.gte * 1) &&
+                    product.price.value <= (price.lte * 1) : true) &&
+                (rating ? product.review.rating >= (rating * 1) : true)
+            )
+
+            if (!this.data) throw new BaseError('Error Query in  API features', 400, 'API features')
+
+        } catch (error) {
+            this.data = error
+        }
+    }

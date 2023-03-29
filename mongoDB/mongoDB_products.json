@@ -1,0 +1,50 @@
+{
+    "_id": {
+        "$oid": "637f2e9fd572abed9a85b2b0"
+    },
+    "image_link": "https://i.etsystatic.com/13354447/r/il/80fda4/1305116164/il_1588xN.1305116164_fya7.jpg",
+    "name": "The Losers Club Sweatshirt",
+    "category": "Clothing",
+    "price": {
+        "value": 65.3,
+        "currency": "USD"
+    },
+    "shop": {
+        "id": 0,
+        "name": "VCN Roy"
+    },
+    "sold": {
+        "count": 3,
+        "in_a_week": 0
+    },
+    "createdOn": {
+        "$date": {
+            "$numberLong": "1669279391613"
+        }
+    },
+    "stock": 3,
+    "sku": "ST241122S1",
+    "options": {
+        "color": [
+            "Red"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L"
+        ]
+    },
+    "images": [
+        "https://i.etsystatic.com/13354447/r/il/80fda4/1305116164/il_1588xN.1305116164_fya7.jpg"
+    ],
+    "description": "A genuine product of VCN Shop is comfortable and suitable for everyone. We guarantee 100% refund and exchange if there is any defect in the product and guarantee that the product will match the description and picture you see. Products will be delivered nationwide within 7 days (only during office hours). We believe our products will be the best choice. Thank you for choosing us!",
+    "sale": {
+        "off": "3"
+    },
+    "__v": 0,
+    "review": {
+        "count": 0,
+        "rating": 0,
+        "reviews": []
+    }
+}

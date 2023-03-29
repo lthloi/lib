@@ -1,0 +1,43 @@
+
+* using getState():
+
+    __reducer:{
+        initialState: {
+            cartItems: localStorage.getItem("cartItems")
+                ? JSON.parse(localStorage.getItem("cartItems"))
+                : [],
+            shippingInfo: localStorage.getItem("shippingInfo")
+                ? JSON.parse(localStorage.getItem("shippingInfo"))
+                : {},
+            loading: false,
+            removeItemLoading: false,
+            error: false,
+        }
+    }
+
+    __action:{
+        const addProductToCart = (product_id, options) => async (dispatch, getState) => {
+            try {
+                dispatch(addProductToCartRequest())
+
+                let api_to_get_products_cart =
+                    '/api/addProductToCart?productId=' + product_id +
+                    (options ? '&options[color]=' + options.color +
+                        '&options[size]=' + options.size : '')
+
+                let { data } = await axios.get(EXPRESS_SERVER + api_to_get_products_cart)
+
+                dispatch(addProductToCartSuccess({ product: data.product }))
+
+                localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
+
+                toast.success('Add to cart successfully!')
+            } catch (error) {
+                let errorObject = actionsErrorHandler(error, 'Error Warning: fail to add product to cart.')
+
+                dispatch(addProductToCartFail({ error: errorObject }))
+
+                toast.error(errorObject.message)
+            }
+        }
+    }

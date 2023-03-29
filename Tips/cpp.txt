@@ -1,0 +1,15 @@
+
+1. format code on save c++ in Google form (search)
+__content:{
+    Go Preferences -> Settings
+    Search for C_Cpp.clang_format_fallbackStyle
+    Click Edit, Copy to Settings
+    Change from "Visual Studio" to "{ BasedOnStyle: Google, IndentWidth: 4 }"
+    e.g.
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
+    btw ColumnLimit: 0 is helpful too, because google limit will break your code to...
+    next line when you do not need it.
+}
+__link:{
+    https://stackoverflow.com/questions/45823734/visual-studio-code-formatting-for
+}

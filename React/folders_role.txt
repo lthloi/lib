@@ -1,0 +1,22 @@
+
+* Describe stucture src folder:
+
+1. assets:
+    - for public file that I want everybody can see
+    # such as image or video or js/css file or so on
+
+2. serviecs:
+    - for APIs called to back-end
+
+3. styles:
+    - for global css
+    # such as I want to share color variables or 'px' variable between files
+
+4. views:
+    - for pages of my app
+
+5. utils:
+    - for function that can used globally
+
+6. store:
+    - only for Redux

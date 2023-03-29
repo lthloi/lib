@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Start Scrolling</h1>
+  <div id="scrollToTop">
+    <span>Go Up</span>
+  </div>
+
+  <script>
+
+    var xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function () {
+      if (this.status == 200) {
+        console.log('=== Successfully')
+        console.log(this)
+        console.log(this.responseText)
+        const data = JSON.parse(xhttp.responseText)
+        console.log(data)
+      }
+    }
+    xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true)
+    xhttp.send('')
+
+
+
+    /* What is argument of promise ? We have a promise:
+    Promise {<pending>}
+      [[Prototype]]: Promise
+      [[PromiseState]]: "fulfilled"
+      [[PromiseResult]]: okelavcn
+    and th argument is okelavcn =)) */
+    const fetchor = fetch('https://jsonplaceholder.typicode.com/todos/1')
+    console.log(fetchor)
+    /* fetch() return a promise and this promise bring a argument
+    and this argument is 'data' parameter in then() */
+    fetchor
+      .then(data => {
+        let correct_data = data.json()
+        console.log(correct_data)
+        return correct_data
+      })
+      /* Cuz data.json() return a promise , so we must continue use then() to get
+      argument of this promise (data.json) */
+      .then(rep => {
+        console.log(rep)
+      })
+
+
+
+    const getFetch = async () => {
+      /* use await keyword to get argument of fetch() , this time value of fetchor is 
+      argument of fecth() , use await keyword or use then() to get argument of 
+      that promise (fecth())*/
+      let fetchor = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+      let data = await fetchor.json()
+      console.log('>>> data >>>', data)
+      return data
+    }
+    /* Cuz getFetch() return a promise (due to using 'async' keyword) , so we must
+    continue use then() to get argument of that promise (getFecth()) */
+    getFetch().then(data => {
+      console.log(data)
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+
+1. Convert money number to decimal number:
+    __js:{
+        .toLocaleString('en', { useGrouping: true }
+    }
