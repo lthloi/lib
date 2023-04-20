@@ -1,19 +1,28 @@
 
-1. Email:
-/^[\w-]{2,}@([a-z]{2,12}\.){1,5}[a-z]{2,5}$/
+1. Email (chat GPT):
+    /^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.-][a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/
+    - Note:
+    ^ : Bắt đầu của chuỗi
+    [a-zA-Z0-9]+ : Một hoặc nhiều ký tự chữ cái hoặc số
+    ([._-][a-zA-Z0-9]+)* : Zero hoặc nhiều ký tự "." hoặc "_" hoặc "-" theo sau là một hoặc nhiều ký tự chữ cái hoặc số
+    @ : Ký tự @
+    [a-zA-Z0-9]+ : Một hoặc nhiều ký tự chữ cái hoặc số
+    ([.-][a-zA-Z0-9]+)* : Zero hoặc nhiều ký tự "." hoặc "-" theo sau là một hoặc nhiều ký tự chữ cái hoặc số
+    \.[a-zA-Z]{2,} : Dấu chấm và ít nhất hai ký tự chữ cái sau dấu chấm
+    $ : Kết thúc của chuỗi
 
-2. Password:
-    - for each times to check:
-    
-    - for one time to check:
+
+2. Password (chat GPT):
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])(?!.*\s).{8,}$/
+    - Note:
+    ^ : Bắt đầu của chuỗi
+    (?=.*[a-z]) : Phải có ít nhất một chữ cái viết thường
+    (?=.*[A-Z]) : Phải có ít nhất một chữ cái viết hoa
+    (?=.*\d) : Phải có ít nhất một số
+    (?=.*[!@#$%^&*()]) : Phải có ít nhất một ký tự đặc biệt
+    (?!.*\s) : Không được chứa khoảng trắng
+    .{8,} : Độ dài tối thiểu là 8 ký tự ## dấu chấm -> khớp với bất cứ kí tự nào ngoại trừ kí tự xuống dòng
+    $ : Kết thúc của chuỗi
+
 
 3. Phone Number:
-/\+?\(?([0-9]{3})\)?([ .-]?)([0-9]{3})([0-9]{4,6})/
-VD:{
-    (123) 456 7899
-    (123).456.7899
-    (123)-456-7899
-    123-456-7899
-    123 456 7899
-    1234567899
-}

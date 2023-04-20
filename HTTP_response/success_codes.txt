@@ -1,0 +1,18 @@
+
+* 200:
+Mã 200 OK: Đây là mã thành công được sử dụng khi request đã được xử lý thành công và trả về kết quả theo yêu cầu.
+
+* 201:
+Mã 201 Created: Đây là mã thành công được sử dụng khi request đã tạo một tài nguyên mới thành công trên server.
+
+* 204:
+Mã 204 No Content: Đây là mã thành công được sử dụng khi request đã xử lý thành công nhưng không trả về bất kỳ phản hồi... 
+nào. Mã này thường được sử dụng trong các trường hợp xoá tài nguyên trên server.
+
+* 206:
+Mã 206 Partial Content: Đây là mã thành công được sử dụng khi server trả về chỉ một phần của response theo yêu cầu của client.
+
+* 304:
+Mã 304 Not Modified: Đây là mã thành công được sử dụng khi client yêu cầu một tài nguyên nhưng tài nguyên đó chưa thay đổi... 
+kể từ lần truy cập trước đó của client. Mã này cho phép client sử dụng bộ đệm của mình để hiển thị tài nguyên mà không cần... 
+tải lại nó từ server.

@@ -1,0 +1,31 @@
+* cookie (expressjs):
+- có 2 loại cookie: session cookie và persistent cookie
+- có 2 loại cookie: cookie dc kí và cookie ko dc kí (signed cookie & unsigned cookie)
+- có 2 loại cookie: cookie bên thứ nhất và cookie bên thứ ba
+- cookie dc gửi đến server cùng với mỗi request, có thể xem trực tiếp trong tab network và ở request header trong DevTool
+- khi set cookie cần phải set các option ví dụ như domain, path, expire, secure, httpOnly, etc.
+- có thể truy cập cookie = req.cookies với app.use(cookieParser())
+- có thể set cookie = res.cookie() trong endpoint của api
+- set cookie từ res.cookie() là set cookie cho persistent cookie
+- có thể xem cookie hiện tại với tab console trong DevTool = script: document.cookie (chỉ xem dc khi httpOnly = false)
+
+* session (expressjs):
+- session là khoảng thời gian user visit 1 cái gì đó cụ thể trên 1 trang web nhất định
+- session dc gửi đến server cùng với mỗi request
+- có thể truy cập session = req.session
+- để lưu trữ dữ liệu của session, chỉ cần dùng thuộc tính req.session, ví dụ: req.session.views++
+- quy trình:
+{
+    client gửi request lên server, server set thuộc tính cho session bằng req.session (set username: req.session.username = 'vcn')...
+    khi HTTP respone dc trả về client, hàm req.session.save() dc call tự động, hàm save() cập nhật giá trị 'vcn' vừa dc set vào...
+    store của session (store của session là bộ nhớ vật lý phía máy chủ, có thể là bộ nhớ RAM, bộ nhớ cache, etc) server cũng có...
+    thể chủ động điều chỉnh store để xóa session hay cập nhật giá trị cho session trước khi cập nhật tự động bằng hàm save(), khi...
+    client gửi request tiếp theo đến server, server truy cập vào store để lấy giá trị cho các thuộc tính của session.
+
+    [~ chat GPT] Trong một số trường hợp, bạn có thể muốn lưu trữ thông tin giữa các request cho một người dùng cụ thể. Bạn có...
+    thể sử dụng phiên (session) để lưu trữ thông tin này. Các giá trị được lưu trữ trong phiên sẽ được giữ nguyên và có thể được...
+    truy cập bởi các request sau đó của người dùng trong cùng phiên.
+}
+
+*** Cookie là dành cho user truy cập.
+*** Session là dành cho 1 lượt truy cập trên 1 phiên cụ thể có thời hạn.

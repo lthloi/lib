@@ -1,0 +1,17 @@
+
+* 400:
+Mã lỗi 400 Bad Request: Đây là mã lỗi được sử dụng khi máy chủ không thể hiểu hoặc xử lý yêu cầu được gửi từ phía client... 
+Mã lỗi này thường xảy ra khi yêu cầu của client bị sai cú pháp hoặc không đầy đủ các thông tin cần thiết.
+
+* 401:
+Mã lỗi 401 Unauthorized: Đây là mã lỗi được sử dụng khi client yêu cầu truy cập vào một nguồn tài nguyên mà yêu cầu cần...
+phải được xác thực, nhưng client chưa cung cấp thông tin xác thực hợp lệ. Mã lỗi này thường được sử dụng khi người dùng... 
+chưa đăng nhập hoặc nhập sai thông tin đăng nhập.
+
+* 403:
+Mã lỗi 403 Forbidden: Đây là mã lỗi được sử dụng khi máy chủ từ chối cho phép client truy cập vào nguồn tài nguyên được... 
+yêu cầu, bởi vì client không có quyền truy cập hoặc không đủ quyền để truy cập vào tài nguyên đó.
+
+* 404:
+Mã lỗi 404 Not Found: Đây là mã lỗi được sử dụng khi máy chủ không tìm thấy nguồn tài nguyên được yêu cầu bởi client... 
+Mã lỗi này thường được sử dụng khi client yêu cầu truy cập vào một tài nguyên không tồn tại trên máy chủ hoặc đã bị xóa bỏ.
