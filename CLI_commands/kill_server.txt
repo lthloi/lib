@@ -1,11 +1,15 @@
 
-* How to kill server is working on a port:
-- open cmd
-- enter:
+* How to kill a server with a PID (Port ID) is working on a port 3000 by CLI:
+- B1: open CLI
+- B2: enter:
 $ netstat -ano|findstr "PID :3000"
-# with :3000 is the port want to find
-- after all the cmd will display detail about server is working
+# 3000 is the port want to find
+- B3: at this time, the CLI will display detail about server is working
+- B4: enter:
+$ taskkill /pid 10608 /f
+# for example, 10608 is the PID of the server will be killed
+- B5: at this time, the server is killed
 
 ** Refference:{
-    https://levelup.gitconnected.com/how-to-kill-server-when-seeing-eaddrinuse-address-already-in-use-16c4c4d7fe5d
+    https://stackoverflow.com/a/65346262
 }
