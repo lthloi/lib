@@ -1,0 +1,41 @@
+
+- merge code from branch A to branch main (branch B is gonna be overwritted):
+{
+    # firstly, commit all changes from the working branch (this case is A), then switch to the branch want to...
+    # merge to (the branch is gonna be overwritted, this case is main), then run `git merge A`, now the branch main...
+    # has all changes of branch A. OK done!
+    VD:{
+        # Switch to a branch want to use for merge
+        $ git checkout A
+        # Edit some files and commit
+        $ git add <file>
+        $ git commit -m "do something"
+        # Switch to the branch want to merge to
+        $ git checkout main
+        # Merge the branch mybranch to branch main
+        $ git merge mybranch
+    }
+}
+
+- merge code from two branches A and main with no related commit histories between them:
+{
+    # firstly, commit all changes from the working branch (this case is A), then switch to the branch want to...
+    # merge to (the branch is gonna be overwritted, this case is main), then run `git merge A --allow-unrelated-histories`,...
+    # now the branch main has some merge conflicts that has to be resolved manually. To resolve the conflicts manually,...
+    # can use vscode, open files with the conflicts in vscode and can see the conflicts via the UI of vscode (CodeLens),...
+    # now can resolve the conflicts by do the steps in order: click on the button "Resolve in Merge Editor", click on...
+    # "accept incoming", click on the button "Complete Merge". Now the conflicts in the file is resolved, then...
+    # repeat those steps with other files until there is no conflicts left. OK done!
+    VD:{
+        # Switch to a branch want to use for merge
+        $ git checkout A
+        # Edit some files and commit
+        $ git add <file>
+        $ git commit -m "do something"
+        # Switch to the branch want to merge to
+        $ git checkout main
+        # Merge the branch A to branch main, the flag --allow-unrelated-histories force the merge to happen,...
+        # then solve the merge conflicts
+        $ git merge mybranch --allow-unrelated-histories
+    }
+}
