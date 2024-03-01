@@ -1,0 +1,30 @@
+
+- View html page online:
+    - the first way:
+    http://<username>.github.io/<repo_name>/<html_file_name.html>
+    VD:{
+        https://codevcnn.github.io/Alpha/Bai_3_form_sign_up/Bai_3.html
+        https://codevcnn.github.io/Alpha/Bai_5.html
+    }
+
+    - the second way:
+    https://htmlpreview.github.io
+    # go to this web and paste the link want to view
+    VD:{
+        access "https://htmlpreview.github.io" and paste the link...
+        "https://github.com/codevcnn/Share/blob/main/Bai_4.html"
+    }
+
+** refference: https://stackoverflow.com/questions/8446218/how-to-see-an-html-page-on-github-as-a-normal-rendered-html-page-to-see-preview
+
+- create a new repository on the command line:
+{
+    ${
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/codevcnn/Lib.git
+        git push -u origin main
+    }
+}
