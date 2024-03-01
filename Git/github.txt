@@ -22,7 +22,6 @@
 - create a new repository on the command line:
 {
     ${
-        echo "# Lib" >> README.md
         git init
         git add README.md
         git commit -m "first commit"
@@ -31,6 +30,8 @@
         git push -u origin main
     }
 }
+
+3. Git:
 
 - push an existing repository from the command line:
 {
@@ -41,17 +42,22 @@
     }
 }
 
-- push something to a repo:
+- merge code from branch A to branch B (branch B is gonna be overwritted):
 {
-    ${
-        git add .
-        git commit -m "<write something>"
-        git push <repo> <branch>
-
-        VD:{
-            git add .
-            git commit -m "update Lib"
-            git push Lib main
-        }
+    # firstly, commit all changes from the working branch, then switch to the branch want to merge to (the branch...
+    # is gonna be overwritted, this case is B), then run `git merge A`, after all the branch B now has all changes...
+    # of branch A. OK done!
+    VD:{
+        # Switch to a branch
+        git checkout mybranch
+        # Edit some files
+        git add <file>
+        git commit -m "do something"
+        # Edit some files again
+        git add <file>
+        git commit -m "do something"
+        # Merge in the branch mybranch
+        git checkout main
+        git merge mybranch
     }
 }
