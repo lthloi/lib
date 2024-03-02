@@ -26,7 +26,7 @@
     # now can resolve the conflicts by do the steps in order: click on the button "Resolve in Merge Editor", click on...
     # "accept incoming", click on the button "Complete Merge". Now the conflicts in the file is resolved, then...
     # repeat those steps with other files until there is no conflicts left. Once there is no conflicts left, keep...
-    # editing code as normal..., OK done!
+    # editing code as normal (git add, git commit, git push, ...). OK done!
     VD:{
         # Switch to a branch want to use for merge
         $ git checkout A
@@ -35,7 +35,7 @@
         $ git commit -m "do something"
         # Switch to the branch want to merge to
         $ git checkout main
-        # Merge the branch A to branch main, the flag --allow-unrelated-histories force the merge to happen,...
+        # Merge the branch A to branch main, the flag --allow-unrelated-histories forces the merge to happen,...
         # then solve the merge conflicts
         $ git merge mybranch --allow-unrelated-histories
     }
