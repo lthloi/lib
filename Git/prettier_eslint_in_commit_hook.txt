@@ -16,6 +16,7 @@
                 "**/*": "prettier --write --ignore-unknown"
             }
         }
+        # OK now continue coding as normal!
     }
     Reference:{
         https://prettier.io/docs/en/install
