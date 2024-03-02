@@ -1,0 +1,23 @@
+- prettier and eslint in commit hook:
+{
+    # firstly, go to prettier site and install prettier, then follow the guid under to set up the commit hook with prettier
+    VD:{
+        # note that this works with yarn 1, yarn version tested: 1.22.21
+        # first of all, need a git exits
+        $ git init
+        # set up the commit hook
+        $ yarn add --dev --exact prettier 
+        $ yarn add --dev husky lint-staged
+        $ npx husky init
+        $ node --eval "fs.writeFileSync('.husky/pre-commit','npx lint-staged\n')"
+        # add the following to your package.json:
+        {
+            "lint-staged": {
+                "**/*": "prettier --write --ignore-unknown"
+            }
+        }
+    }
+    Reference:{
+        https://prettier.io/docs/en/install
+    }
+}
