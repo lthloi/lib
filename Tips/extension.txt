@@ -1,0 +1,20 @@
+// code for auto tick at rating teachers in order to view scores
+const rating = (tableId) => {
+    const table = document.getElementById(tableId)
+    const rows = table.querySelectorAll('tbody .style4')
+    const listOfInputs = []
+    for (const row of rows) {
+        listOfInputs.push(row.querySelectorAll('.td input'))
+    }
+    const finalList = listOfInputs.slice(1)
+    for (const inputs of finalList) {
+        const ran = Math.random() < 0.5 ? true : false
+        if (ran) {
+            inputs[0].checked = true
+        } else {
+            inputs[1].checked = true
+        }
+    }
+}
+
+rating('ContentPlaceHolder1_dtlKhaoSat')
